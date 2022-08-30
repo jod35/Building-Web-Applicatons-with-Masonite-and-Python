@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update Task</h2>
+<div class="form">
+    <form action="{{route('update',{'id':task.id})}}" method="post">
+        {{csrf_field}}
+        <div class="form-group">
+            <label for="content">Content</label>
+            <input type="text" name="content" id="content" class="form-control" value="{{task.content}}">
+        </div>
+        <div class="form-group">
+            <label for="content">Description</label>
+            <textarea name="description" class="form-control" id="content" cols="30" rows="10">{{task.description}}</textarea>
+        </div>
+        <input type="submit" value="Save" class="btn btn-primary">
+    </form>
+</div>
+{% endblock content %}
+    

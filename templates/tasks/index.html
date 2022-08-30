@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Latest Tasks</h1>
+   
+   {% for task in tasks %}
+   <div class="jumbotron">
+    <h2>{{task.content}}</h2>
+    <p>{{task.description}}</p>
+    <a href="{{route('show',{'id':task.id})}}">detail</a>
+    </div>
+   {% endfor %}
+    
+{% endblock content %}
+    

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="jumbotron">
+        <h2>{{task.content}}</h2>
+        <p>{{task.description}}</p>
+        <small>
+            <b>Created at {{task.created_at}}</b>
+        </small>
+        <p>
+            <a href="{{route('edit',{'id':task.id})}}" class="btn btn-success">Update</a>
+            <a href="{{route('destroy',{'id':task.id})}}" class="btn btn-danger">Delete</a>
+        </p>
+    </div>
+    
+{% endblock content %}
+    
